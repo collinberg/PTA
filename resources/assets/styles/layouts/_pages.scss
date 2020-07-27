@@ -1,0 +1,70 @@
+.entry-content {
+  h2 {
+    color: #000;
+    border-top: 5px solid #dc6e37;
+    padding-top: 8px;
+    font-size: 1.1em;
+    font-weight: 800;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    letter-spacing: 0.01em;
+    display: inline-block;
+  }
+
+  h3 {
+    @apply text-3xl text-black font-extrabold mt-5;
+
+    span {
+      @apply text-primary;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 15px;
+
+    li {
+      position: relative;
+      padding-left: 3px;
+      font-size: 18px;
+      line-height: 1.75;
+
+      &::before {
+        content: "■";
+        font-family: "Arial Black", serif;
+        position: absolute;
+        left: -15px;
+        top: -7px;
+        font-size: 1.2em;
+        color: $primary;
+      }
+    }
+  }
+}
+
+.h-custom {
+  min-height: 180px;
+}
+
+.custom-bg {
+  .entry-content h2 {
+    color: white;
+    border-color: white;
+  }
+}
+
+.page-header {
+  background: $primary;
+}
+
+@screen md {
+  .h-custom {
+    min-height: 400px;
+  }
+}
+
+@screen lg {
+  .h-custom {
+    min-height: 600px;
+  }
+}
