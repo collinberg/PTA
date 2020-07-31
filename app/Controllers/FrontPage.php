@@ -43,25 +43,43 @@ class FrontPage extends Controller
            $type = $block['acf_fc_layout'];
            $classes = "py-5 lg:py-10 ";
 
-           if($type == 'logo') {
+           if($type == 'Logo')
+           {
 
              $this_block = (object) [
                'index'               => $i,
                'block_type'          => $type,
-               'classes'              => $classes,
-               'section_description' => $block['section_description'],
+               'section_classes'     => $classes,
                'section_title'       => $block['section_title'],
-               'logos'               => $block['logo_repeater'],
+               'logos'               => $block[$type]['logo_repeater'],
              ];
 
              array_push($data, $this_block);
 
-           }elseif($type == 'News') {
+           }
+           elseif($type == 'News')
+           {
 
-             if( $block[$type]['padding_top'] != ''): $classes .= $block[$type]['padding_top'] . " "; endif;
-             if( $block[$type]['padding_bottom'] != ''):$classes .= $block[$type]['padding_bottom'] . " "; endif;
-             $classes .= $block[$type]['section_height'] . " ";
-             $classes .= $block[$type]['header_location']. " ";
+             if( !empty($block[$type]['background_image']) ){
+               $classes .= 'custom-bg';
+             }
+
+             $this_block = (object) [
+               'index'               => $i,
+               'block_type'          => $type,
+               'header'              => $block[$type]['section_header'],
+               'background_color'    => $block[$type]['background_color'],
+               'section_classes'     => $classes,
+               'all_fields'          => $block[$type],
+               'color'               => $block[$type]['header_color']
+             ];
+
+             array_push($data, $this_block);
+           }
+           elseif($type == 'Landing')
+           {
+
+            $classes .= 'min-h-screen flex justify-center flex-col ';
 
              if( !empty($block[$type]['background_image']) ){
                $classes .= 'custom-bg';

@@ -6,7 +6,8 @@
 @else
   <section class='{{ $block->section_classes }}'
            id='section-{{$block->index}}'>
-@endif	<div class='container'>
+@endif
+  <div class='container'>
 		<h2 class='text-center font-bold text-4xl'>{{$block->header }}</h2>
 		<div class='flex my-8 flex-wrap'>
       @foreach($news_loop as $item)

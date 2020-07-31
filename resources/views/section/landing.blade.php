@@ -1,13 +1,18 @@
-<section class='full-section flex items-center justify-center relative' id='homeLanding'>
-  <div class='carousel-container absolute'>
-    @foreach($carousel_images as $image)
-      <div style="background: url({!! $image['url'] !!}); background-size: cover; background-position: 50% 50%;"  class='w-full carouselImg' id='f{!! $loop->index !!}'></div>
-    @endforeach
-
-  </div>
-	<div class='w-11/12 sm:w-2/3 lg:w-1/3 text-center relative'>
-		<h1 class=''>Preserving the City We Love</h1>
-		<p class='text-white mx-auto font-bold mb-5'>We're on the frontlines, protecting the unique landmarks and neighborhoods that make up the heart and soul of New York.</p>
-		<a href="/who-we-are" class='btn text-white my-4 px-12 inline-block'>About Us</a>
+@if( !empty($block->background_color))
+  <section class='{{ $block->section_classes }} '
+            style="background-color: {{  $block->background_color  }}"
+            id='section-{{$block->index}}'>
+@elseif( !empty($block->all_fields['background_image']))
+  <section class='{{ $block->section_classes }}'
+           style="background-image: url({{  $block->all_fields['background_image']['url'] }}); background-size: {{  $block->all_fields['background_image_size']}}; background-position: center center;"
+           id='section-{{$block->index}}'>
+@else
+  <section class='{{ $block->section_classes }}'
+           id='section-{{$block->index}}'>
+@endif
+	<div class='w-11/12 sm:w-2/3 lg:w-1/3 text-center mx-auto'>
+		<h1 class='text-white text-3xl lg:text-5xl font-bold'>{{ $block->header }}</h1>
+		<p class='text-white mx-auto font-bold mb-5'>{{ $block->all_fields['tagline'] }}</p>
+		<a href="{{ $block->all_fields['button_link'] }}" class='btn text-white my-4 px-12 inline-block'>{{ $block->all_fields['button_Text'] }}</a>
 	</div>
 </section>
