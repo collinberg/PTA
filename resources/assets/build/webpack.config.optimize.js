@@ -8,19 +8,16 @@ const config = require('./config');
 const glob = require('glob-all');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 
-//Used on NYLC, Not part of Roots
-const whitelister = require("purgecss-whitelister");
-
 /**
  * Custom PurgeCSS Extractor
  * https://github.com/FullHuman/purgecss
  * https://github.com/FullHuman/purgecss-webpack-plugin
  */
-class TailwindExtractor {
-  static extract(content) {
-    return content.match(/[A-z0-9-:\/]+/g);
-  }
-}
+ class TailwindExtractor {
+   static extract(content) {
+     return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
+   }
+ }
 
 module.exports = {
   plugins: [
@@ -58,13 +55,6 @@ module.exports = {
                extractor: TailwindExtractor,
                extensions: ["js", "php"],
              },
-           ],
-           whitelist: [
-             ...whitelister([
-               "node_modules/tailwindcss/css/preflight.css",
-               "resources/assets/styles/common/*.scss",
-               "resources/assets/styles/components/*.scss",
-               "resources/assets/styles/layouts/*.scss"]),
            ],
            whitelistPatterns: [
              /ctct*/,/ssba*/,/fsForm*/,/page-template-template-form*/,
