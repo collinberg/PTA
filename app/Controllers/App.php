@@ -25,6 +25,9 @@ class App extends Controller
             }
             return __('Latest Posts', 'sage');
         }
+        if( is_post_type_archive('tribe_events')) {
+          return 'Events';
+        }
         if (is_archive()) {
             return get_the_archive_title();
         }
