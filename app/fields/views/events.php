@@ -15,8 +15,10 @@ $eventsSection
   ->addGroup('Events')
 
     ->addFields(get_field_partial('partials.content')
-          ->removeField('section_content')
-          ->addNumber('event_amount',['label' => 'Number of Events']))
+          ->removeField('section_content'))
+          ->addNumber('event_amount',['label' => 'Number of Events','placeholder' => '3','min' => '1',
+        'max' => '6'])
+            ->setWrapper(['width' => '33'])
 
     ->addFields(get_field_partial('partials.background'))
 

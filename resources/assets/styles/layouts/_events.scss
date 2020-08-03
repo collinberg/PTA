@@ -1,3 +1,47 @@
 .tribe-events-c-view-selector__list-item-text {
   display: none;
 }
+
+.event_cats_list {
+  margin-top: 10px;
+
+  li {
+    @apply mr-3;
+
+    display: inline-block;
+
+    a {
+      color: white;
+      border-radius: 15px;
+      padding: 3px 10px;
+      background: $primary;
+      font-size: 12px;
+      line-height: 1.5em;
+      pointer-events: none;
+    }
+  }
+}
+
+//Event List
+.tribe-events-c-view-selector {
+  display: none;
+}
+
+.tribe-events-c-events-bar__search .tribe-common-c-btn {
+  background: $primary;
+  margin-right: 5px;
+}
+
+.tribe-common--breakpoint-medium.tribe-common .tribe-common-h6--min-medium {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+//Event Single
+.single-tribe_events aside {
+  .tribe-events-single-section {
+    .tribe-events-meta-group {
+      width: 100%;
+    }
+  }
+}
