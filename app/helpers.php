@@ -138,6 +138,8 @@ function display_sidebar()
     // The sidebar will be displayed if any of the following return true
     is_single(),
     is_404(),
+    is_home(),
+    is_archive(),
     is_page_template('views/template-custom.blade.php')
   ]);
 

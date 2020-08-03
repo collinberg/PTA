@@ -6,4 +6,62 @@ aside.sidebar {
       }
     }
   }
+
+  .widget {
+    h3 {
+      @apply text-2xl relative text-primary;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 0;
+        width: 30%;
+        height: 4px;
+        background: $primary;
+      }
+    }
+
+    .cat-item {
+      padding: 12px 0;
+      border-bottom: 2px solid #5e7fb133;
+
+      a {
+        @apply border-none;
+
+        transition: all 0.4s;
+
+        &:hover {
+          color: darken($primary, 10%);
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+
+  .widget_search {
+    margin-top: 40px;
+
+    .search-form label {
+      margin-bottom: 0;
+      flex: 1;
+    }
+
+    .search-form .search-field {
+      padding: 8px 6px;
+      margin-bottom: 0;
+      border-radius: 0;
+      border-right: 0;
+    }
+
+    .search-form .search-submit {
+      border-radius: 0;
+      background: $primary;
+      border-color: $primary;
+
+      &:hover {
+        background: darken($primary, 10%);
+      }
+    }
+  }
 }
