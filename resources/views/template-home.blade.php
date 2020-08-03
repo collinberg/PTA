@@ -11,15 +11,21 @@
   @foreach ($flex_generator as $block)
 
     @if ($block->block_type == 'Logo')
+
       @include('section.logo')
-    @endif
 
-    @if ($block->block_type == 'Landing')
+    @elseif ($block->block_type == 'Landing')
+
       @include('section.landing')
-    @endif
 
-    @if ($block->block_type == 'News')
+    @elseif($block->block_type == 'News')
+
       @include('section.news')
+
+    @elseif($block->block_type == 'Events')
+
+      @include('section.events')
+
     @endif
 
   @endforeach

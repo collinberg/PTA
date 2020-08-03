@@ -6,6 +6,8 @@ use Sober\Controller\Controller;
 
 class FrontPage extends Controller
 {
+  protected $acf = true;
+
   public function newsLoop()
   {
 
@@ -26,10 +28,33 @@ class FrontPage extends Controller
       }, $news_loop);
     }
 
-  protected $acf = true;
+  public function eventLoop()
+  {
 
-   public function FlexGenerator()
-   {
+      $events_loop = tribe_get_events([
+        'posts_per_page' => 3,
+        'start_date'     => 'now',
+      ]);
+
+
+     return array_map(function ($post) {
+          return [
+            'title'         =>  get_the_title( $post->ID ),
+            'event_month'   =>  tribe_get_start_date($post->ID, false,'M'),
+            'event_day'     =>  tribe_get_start_date($post->ID, false,'d'),
+            'all_day'       =>  tribe_event_is_all_day($post->ID),
+            'event_start'   =>  tribe_get_start_time( $post->ID, false ),
+            'event_end'     =>  tribe_get_end_time( $post->ID, false ),
+            'image'         =>  get_the_post_thumbnail($post->ID),
+            'excerpt'       =>  get_the_excerpt( $post->ID ),
+            'link'          =>  get_the_permalink( $post->ID ),
+            'event_cat'     =>  get_the_term_list(  $post->ID, 'tribe_events_cat','<ul class="event_cats_list mx-0 p-0 inline"><li>','</li><li>', '</li></ul>'),
+          ];
+      }, $events_loop);
+    }
+
+  public function FlexGenerator()
+  {
      $page_builder = get_field('home_sections');
      $data = [];
 
@@ -50,7 +75,7 @@ class FrontPage extends Controller
                'index'               => $i,
                'block_type'          => $type,
                'section_classes'     => $classes,
-               'section_title'       => $block['section_title'],
+               'header'              => $block[$type]['section_header'],
                'logos'               => $block[$type]['logo_repeater'],
              ];
 
@@ -71,7 +96,6 @@ class FrontPage extends Controller
                'background_color'    => $block[$type]['background_color'],
                'section_classes'     => $classes,
                'all_fields'          => $block[$type],
-               'color'               => $block[$type]['header_color']
              ];
 
              array_push($data, $this_block);
@@ -92,7 +116,23 @@ class FrontPage extends Controller
                'background_color'    => $block[$type]['background_color'],
                'section_classes'     => $classes,
                'all_fields'          => $block[$type],
-               'color'               => $block[$type]['header_color']
+             ];
+
+             array_push($data, $this_block);
+           } elseif($type == 'Events')
+           {
+
+             if( !empty($block[$type]['background_image']) ){
+               $classes .= 'custom-bg';
+             }
+
+             $this_block = (object) [
+               'index'               => $i,
+               'block_type'          => $type,
+               'header'              => $block[$type]['section_header'],
+               'background_color'    => $block[$type]['background_color'],
+               'section_classes'     => $classes,
+               'all_fields'          => $block[$type],
              ];
 
              array_push($data, $this_block);
