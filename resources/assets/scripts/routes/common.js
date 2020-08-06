@@ -9,6 +9,15 @@ export default {
 		}
 		$('#menuToggle').click(menuMorph);
 
+    function searchToggle(){
+      $('.search-modal').toggleClass('openSearch');
+      $('.search-icon').toggleClass('hidden');
+      $('.close-search').toggleClass('hidden');
+			$('#searchToggle').toggleClass('open');
+    }
+    $('#searchToggle').click(searchToggle);
+
+
     $('.content').fitVids();
   },
   finalize() {

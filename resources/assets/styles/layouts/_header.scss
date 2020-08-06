@@ -1,4 +1,6 @@
 .banner {
+  z-index: 999;
+
   .sub-menu {
     opacity: 0;
     height: 0;
@@ -150,6 +152,43 @@
   border-left: 2px solid rbga(255, 255, 255, 0.2);
 }
 
+.search-modal {
+  @apply bg-primary shadow-md;
+
+  width: 100%;
+  z-index: 0;
+  padding: 120px 0 80px;
+  position: absolute;
+  top: 0;
+  transition: all 0.4s;
+  transform: translateY(-100%);
+
+  &.openSearch {
+    transform: translateY(0%);
+  }
+
+  .search-field {
+    background: darken($primary, 15%);
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    margin: 0;
+    color: white;
+  }
+
+  .search-submit {
+    background: $secondary;
+    border: none;
+    padding: 18px 10px;
+    font-weight: bold;
+    transition: all 0.4s;
+
+    &:hover {
+      background: darken($secondary, 10%);
+    }
+  }
+}
+
 #mega-nav {
   @apply opacity-0 bg-primary bg-opacity-75 text-white fixed w-full h-full top-0 left-0;
 
@@ -209,6 +248,20 @@
     }
   }
 }
+
+// .home .banner{
+//   .menu-item {
+//     > a {
+//       color: $primary;
+//
+//       transition: all 0.4s;
+//
+//       &:hover {
+//         color: darken($primary, 10%);
+//       }
+//     }
+//   }
+// }
 
 @screen lg {
   .banner {
