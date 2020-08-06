@@ -6,7 +6,7 @@
 <section>
   <div class="container">
     <div class="content flex flex-wrap">
-      <main class="main flex flex-wrap w-full lg:w-3/4 lg:pr-12">
+      <main class="main flex flex-wrap justify-between w-full lg:w-3/4 lg:pr-12 mt-10">
         @if (!have_posts())
           <div class="alert alert-warning">
             {{ __('Sorry, no results were found.', 'sage') }}
