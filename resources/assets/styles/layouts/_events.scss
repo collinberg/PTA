@@ -45,3 +45,42 @@
     }
   }
 }
+
+//Event Archive
+.tribe-events-calendar-list__event-row {
+  background: white;
+  border: 2px solid #ccc !important;
+
+  .tribe-events-calendar-list__event-date-tag {
+    background: $primary;
+    width: 12rem;
+
+    .tribe-common-h5,
+    .tribe-events-calendar-list__event-date-tag-month {
+      color: white;
+      font-weight: bold;
+    }
+
+    .tribe-events-calendar-list__event-date-tag-daynum {
+      font-size: 48px;
+      line-height: 1em;
+    }
+
+    .tribe-events-calendar-list__event-date-tag-month {
+      font-size: 30px;
+    }
+
+    .tribe-events-calendar-list__event-date-tag-datetime {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .tribe-events-calendar-list__event-wrapper {
+    padding: 10px 24px;
+
+    .tribe-common-b2 {
+      margin-bottom: 0;
+    }
+  }
+}
