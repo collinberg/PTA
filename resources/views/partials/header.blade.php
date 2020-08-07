@@ -1,7 +1,7 @@
-<header class="banner bg-primary w-full" aria-label="Main Navigation">
+<header class="banner bg-primary w-full relative" aria-label="Main Navigation">
   <div class="px-8 mx-auto">
     <div class='flex items-start'>
-      <div class='w-full flex row items-center pt-5'>
+      <div class='w-full flex row items-center py-2'>
         @if( $logo != '')
         <a class="brand font-bold text-2xl uppercase border-none" href="{{ home_url('/') }}"><img src='{{ $logo }}' class='brand-logo h-16 mt-5' alt="{{ $site_name }}"></a>
         @else
