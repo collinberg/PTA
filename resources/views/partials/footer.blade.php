@@ -3,7 +3,7 @@
     <div class='flex flex-wrap justify-between'>
       <div class='w-full lg:w-1/2'>
         @php dynamic_sidebar('footer_left') @endphp
-        <p class='text-grey-500 social-links'>Follow Us:
+        <p class='text-grey-500 social-links'>Follow Us<br>
   				@if(!empty($social->twitter))<a href="{{ $social->twitter }}" 		target="_blank" title="twitter"     class="hover:no-underline" rel='noopener'><i class="fab fa-twitter"></i></a>@endif
   				@if(!empty($social->facebook))<a href="{{ $social->facebook }}" 	target="_blank" title="facebook"    class="hover:no-underline" rel='noopener'><i class="fab fa-facebook-f"></i></a>@endif
   				@if(!empty($social->youtube))<a href="{{ $social->youtube }}" 		target="_blank" title="youtube"     class="hover:no-underline" rel='noopener'><i class="fab fa-youtube"></i></a>@endif
