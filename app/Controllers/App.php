@@ -11,10 +11,10 @@ class App extends Controller
         return get_bloginfo('name');
     }
 
-    public function logo()
+    public function siteLogo()
     {
-        $logo = get_field('logo','options');
-        return $logo['url'];
+        $logoURL = get_field('logo','options');
+        return $logoURL;
     }
 
     public static function title()
