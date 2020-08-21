@@ -136,10 +136,10 @@ function display_sidebar()
 
   isset($display) || $display = in_array(true, [
     // The sidebar will be displayed if any of the following return true
-    is_single(),
+    is_singular('post'),
     is_404(),
     is_home(),
-    is_archive(),
+    is_post_type_archive( 'post' ),
     is_page_template('views/template-custom.blade.php')
   ]);
 
