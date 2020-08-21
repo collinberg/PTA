@@ -1,3 +1,9 @@
+<section class="bg-primary py-5 lg:py-20 text-white">
+  <div class='container'>
+    <h2 class='font-bold text-center lg:text-4xl m-0 p-0'>Sign up for our Newsletter</h2>
+
+  </div>
+</section>
 <footer class="content-info bg-grey-darker pt-5 lg:pt-20 text-white">
   <div class="container lg:pb-24">
     <div class='flex flex-wrap justify-between'>
@@ -20,7 +26,7 @@
   </div>
   <div class='bottom_footer_links'>
     <div class='container'>
-      <div class='flex flex-row justify-between pb-3'>
+      <div class='flex flex-row justify-center py-5'>
         @if (has_nav_menu('bottom_footer'))
           {!! wp_nav_menu(['theme_location' => 'bottom_footer', 'menu_class' => 'nav']) !!}
         @endif
