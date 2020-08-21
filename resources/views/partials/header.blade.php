@@ -1,15 +1,12 @@
 <header class="banner bg-primary w-full relative" aria-label="Main Navigation">
   <div class="px-8 mx-auto">
     <div class='flex items-start'>
-      <div class='w-full flex row items-center py-2'>
-        @if( $logo != '')
-        <a class="brand font-bold text-2xl uppercase border-none" href="{{ home_url('/') }}"><img src='{{ $logo }}' class='brand-logo h-16 mt-5' alt="{{ $site_name }}"></a>
-        @else
-        <a class="brand font-bold text-2xl uppercase border-none text-white" href="{{ home_url('/') }}">{{ $site_name }}</a>
-        @endif
+      <div class='w-full flex row  py-2'>
+
+        <a class="brand font-bold text-2xl uppercase border-none relative" href="{{ home_url('/') }}"><img src="{{ $site_logo }}" class='brand-logo absolute' alt="{{ $site_name }}"></a>
         <nav class="nav-primary">
           @if (has_nav_menu('primary_navigation'))
-            {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}
+            {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav py-5']) !!}
           @endif
         </nav>
       </div>

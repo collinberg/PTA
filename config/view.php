@@ -29,8 +29,8 @@ return [
     |
     */
 
-    'compiled' => wp_upload_dir()['basedir'].'/cache',
-    //'compiled' => '/tmp/sage-cache', //Change to this for WPE
+    //'compiled' => wp_upload_dir()['basedir'].'/cache',
+    'compiled' => '/tmp/sage-cache', //Change to this for WPE
 
 
     /*
