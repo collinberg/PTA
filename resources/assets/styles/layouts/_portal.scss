@@ -1,0 +1,31 @@
+.post-password-form {
+  @apply shadow-lg;
+
+  padding: 25px;
+  border-radius: 3px;
+  background: #efefef;
+  border: 1px solid #eee;
+  margin: 30px auto;
+  max-width: 500px;
+
+  input[type=password] {
+    padding: 10px;
+  }
+
+  input[type=submit] {
+    color: #fff;
+    display: inline-block;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    background: $primary;
+    border: 2px solid;
+    transition: all 0.4s;
+  }
+}
+
+.password-wrap {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
