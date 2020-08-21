@@ -13,7 +13,8 @@ class FrontPage extends Controller
 
       $news_loop = get_posts([
         'post_type' => 'post',
-        'posts_per_page' => 3
+        'posts_per_page' => 3,
+        'suppress_filters' => false
       ]);
 
 
@@ -76,6 +77,7 @@ class FrontPage extends Controller
                'block_type'          => $type,
                'section_classes'     => $classes,
                'header'              => $block[$type]['section_header'],
+               'background_color'    => $block[$type]['background_color'],
                'logos'               => $block[$type]['logo_repeater'],
              ];
 
