@@ -213,10 +213,10 @@ class Roots_Vcard_Widget extends \WP_Widget {
       </span>
       <br>
       <?php if( !empty($instance['email'] )): ?>
-      <span class="email "><i class='fas fa-envelope mr-2'></i><a  href="mailto:<?php echo $instance['email']; ?>" class='text-black'/><?php echo $instance['email']; ?></a></span><br>
+      <span class="email "><a  href="mailto:<?php echo $instance['email']; ?>" class='text-black'/><?php echo $instance['email']; ?></a></span><br>
       <?php endif;
       if( !empty($instance['tel'] )): ?>
-      <span class="tel"><i class='fas fa-phone mr-2'></i> <span class="value"><?php echo $instance['tel']; ?></span></span>
+      <span class="tel"><span class="value"><?php echo $instance['tel']; ?></span></span>
     <?php endif; ?>
     </p>
           <br>
@@ -460,12 +460,12 @@ function prefix_register_colors() {
 			array(
 				'name'  => esc_html__( 'Primary', 'prefix_textdomain' ),
 				'slug' => 'primary',
-				'color' => '#dc6e37',
+				'color' => '#2e417c',
 			),
 			array(
 				'name'  => esc_html__( 'Black', 'prefix_textdomain' ),
-				'slug' => 'black',
-				'color' => '#22292f',
+				'slug' => 'secondary',
+				'color' => '#d11324',
 			),
 			array(
 				'name'  => esc_html__( 'Grey', 'prefix_textdomain' ),
@@ -476,6 +476,11 @@ function prefix_register_colors() {
 				'name'  => esc_html__( 'Grey Darker', 'prefix_textdomain' ),
 				'slug' => 'greydarker',
 				'color' => '#606f7b',
+			),
+      array(
+				'name'  => esc_html__( 'Grey Darker', 'prefix_textdomain' ),
+				'slug' => 'Black',
+				'color' => '#333333',
 			),
 		)
 	);
