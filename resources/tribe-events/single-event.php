@@ -21,7 +21,7 @@ $events_label_plural   = tribe_get_event_label_plural();
 $event_id = get_the_ID(); ?>
 <!-- BreadCrumbs -->
 <div class='container'>
-	<?php the_title( '<h1 class="text-center text-black xxl:text-5xl py-5 xxl:py-10">', '</h1>' ); ?>
+	<?php the_title( '<h1 class="text-center text-black lg:text-5xl py-5 lg:py-10 lg:font-bold">', '</h1>' ); ?>
 	<?php tribe_the_notices() ?>
 </div>
 <div class='container'>

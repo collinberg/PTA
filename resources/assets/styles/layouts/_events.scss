@@ -29,7 +29,8 @@
 
 .tribe-events-c-events-bar__search .tribe-common-c-btn {
   background: $primary;
-  margin-right: 5px;
+  margin-right: 15px;
+  color: white;
 }
 
 .tribe-common--breakpoint-medium.tribe-common .tribe-common-h6--min-medium {
@@ -44,6 +45,27 @@
       width: 100%;
     }
   }
+
+  .tribe-events-event-meta {
+    border: none;
+    background: none;
+  }
+
+  .tribe-events-event-cost-label,
+  .tribe-events-start-time-label,
+  .tribe-events-start-date-label,
+  .tribe-events-event-categories-label,
+  .tribe-events-event-url-label {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+}
+
+.tribe-events-c-top-bar__datepicker-button {
+  background: white;
+  border: 2px solid #eee;
+  padding: 5px 9px !important;
+  border-radius: 3px;
 }
 
 //Event Archive
@@ -53,6 +75,7 @@
 
   .tribe-events-calendar-list__event-date-tag {
     background: $primary;
+    padding: 24px;
     width: 12rem;
 
     .tribe-common-h5,
@@ -68,6 +91,7 @@
 
     .tribe-events-calendar-list__event-date-tag-month {
       font-size: 30px;
+      line-height: 1em;
     }
 
     .tribe-events-calendar-list__event-date-tag-datetime {
@@ -82,5 +106,59 @@
     .tribe-common-b2 {
       margin-bottom: 0;
     }
+
+    time {
+      @apply text-sm;
+
+      color: rgb(34, 41, 47);
+      opacity: 75%;
+      font-weight: bold;
+    }
+
+    .tribe-events-c-small-cta__price {
+      background: #eee;
+      padding: 5px;
+      display: inline-block;
+    }
+  }
+
+  .tribe-events-calendar-list__event-title {
+    margin-bottom: 0 !important;
+  }
+}
+
+.tribe-events-calendar-list__month-separator-text {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.2);
+    right: 5px;
+    top: 50%;
+  }
+}
+
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-list__event-details {
+  width: 100%;
+}
+
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-list__event-featured-image-wrapper {
+  display: none;
+}
+
+@screen lg {
+  .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-list__event-date-tag {
+    width: 15%;
+  }
+
+  .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-list__event-details {
+    width: 75%;
+  }
+
+  .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-list__event-featured-image-wrapper {
+    width: 25%;
+    display: block;
   }
 }
