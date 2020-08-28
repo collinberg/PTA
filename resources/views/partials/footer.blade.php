@@ -1,7 +1,7 @@
 <section class="bg-primary py-5 lg:py-20 text-white">
   <div class='container'>
     <h2 class='font-bold text-center lg:text-4xl m-0 p-0'>Sign up for our Newsletter</h2>
-
+    @php echo do_shortcode($footer_newsletter) @endphp
   </div>
 </section>
 <footer class="content-info bg-grey-darker pt-5 lg:pt-20 text-white">
