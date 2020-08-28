@@ -7,6 +7,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const config = require('./config');
 const glob = require('glob-all');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
+const whitelister = require("purgecss-whitelister");
 
 /**
  * Custom PurgeCSS Extractor
@@ -48,6 +49,8 @@ module.exports = {
            paths: glob.sync([
              'app/**/*.php',
              'resources/views/**/*.php',
+             'resources/tribe/**/*.php',
+             'resources/tribe-events/**/*.php',
              'resources/assets/scripts/**/*.js',
            ]),
            extractors: [
@@ -56,8 +59,15 @@ module.exports = {
                extensions: ["js", "php"],
              },
            ],
+           whitelist: [
+           ...whitelister([
+             "node_modules/tailwindcss/css/preflight.css",
+             "resources/assets/styles/common/*.scss",
+             "resources/assets/styles/components/*.scss",
+             "resources/assets/styles/layouts/*.scss"]),
+         ],
            whitelistPatterns: [
-             /ctct*/,/ssba*/,/fsForm*/,/page-template-template-form*/,
+             /ctct*/,/ssba*/,/fsForm*/,/tribe*/,
              /tribe-bar-form*/,/tribe-events-list-separator-month/,
              /tribe-events-sub-nav/,/tribe-events-meta-group*/,
              /banner/,/menu-footer-nav/
