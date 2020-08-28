@@ -23,7 +23,8 @@ class TemplateAbout extends Controller
           $type = $block['acf_fc_layout'];
           $classes = "py-5 lg:py-10 ";
 
-          if( $type == 'One Column'){
+          if( $type == 'One Column')
+          {
             $classes .= $block[$type]['padding_top'] . " ";
             $classes .= $block[$type]['padding_bottom'] . " ";
             $classes .= $block[$type]['section_height'];
@@ -41,7 +42,9 @@ class TemplateAbout extends Controller
             array_push($data, $this_block);
 
           }
-          elseif( $type == 'Two Columns'){
+
+          elseif( $type == 'Two Columns')
+          {
 
             $classes .= $block[$type]['padding_top'] . " ";
             $classes .= $block[$type]['padding_bottom'] . " ";
@@ -82,7 +85,9 @@ class TemplateAbout extends Controller
             array_push($data, $this_block);
 
           }
-          elseif( $type == 'Three Columns'){
+
+          elseif( $type == 'Three Columns')
+          {
 
             $classes = "py-5 lg:py-10 ";
             $classes .= $block[$type]['padding_top'] . " ";
@@ -104,7 +109,9 @@ class TemplateAbout extends Controller
             array_push($data, $this_block);
 
           }
-          elseif( $type == 'Header') {
+
+          elseif( $type == 'Header')
+          {
 
             if( $block[$type]['padding_top'] != ''): $classes .= $block[$type]['padding_top'] . " "; endif;
             if( $block[$type]['padding_bottom'] != ''):$classes .= $block[$type]['padding_bottom'] . " "; endif;

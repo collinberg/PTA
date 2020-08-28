@@ -17,7 +17,7 @@
         @while (have_posts()) @php the_post() @endphp
           @include('partials.content-'.get_post_type())
         @endwhile
-          <div class='w-full'>
+          <div class='w-full mb-10'>
           {!! get_the_posts_navigation(array(
               'prev_text'                  => __( 'Prev' ),
               'next_text'                  => __( 'Next' ),

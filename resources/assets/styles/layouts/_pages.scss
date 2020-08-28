@@ -37,11 +37,12 @@
   }
 
   ul {
-    list-style: none;
+    list-style: disc;
     padding-left: 15px;
 
     li {
       position: relative;
+      margin-bottom: 10px;
       padding-left: 5px;
       font-size: 18px;
       line-height: 1.75;

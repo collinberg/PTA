@@ -4,6 +4,9 @@
       "./scripts/main.js",
       "./styles/main.scss"
     ],
+    "jssor": [
+        "./scripts/jssor.js"
+    ],
     "customizer": [
       "./scripts/customizer.js"
     ]
