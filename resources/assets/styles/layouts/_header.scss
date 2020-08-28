@@ -1,5 +1,6 @@
 .banner {
   z-index: 999;
+  min-height: 70px;
 
   .lang-nav {
     a {
@@ -80,9 +81,9 @@
   }
 
   .brand {
-    width: 160px;
+    width: 60px;//160px;
     line-height: 1.2em;
-    margin: 10px 0;
+    margin: 0;
     margin-right: 10px;
   }
 
@@ -102,6 +103,7 @@
   height: 30px;
   width: 50px;
   z-index: 99999;
+  text-align: center;
 
   .bar {
     height: 2px;
@@ -133,6 +135,9 @@
     top: 25px;
     left: 0;
     text-transform: uppercase;
+    display: block;
+    width: 100%;
+    font-size: 0.8em;
   }
 
   .rotatedown {
@@ -201,17 +206,22 @@
 }
 
 #mega-nav {
-  @apply opacity-0 bg-primary bg-opacity-75 text-white fixed w-full h-full top-0 left-0;
+  @apply opacity-0 bg-primary text-white fixed w-full h-full top-0 left-0;
 
   transition: opacity 0.4s 0.5s, z-index 1s 2s;
   z-index: -10;
 
+  ul.nav {
+    border-top: 2px solid rgba(0, 0, 0, 0.2);
+  }
+
   li {
-    @apply pb-5;
+    @apply pl-5 py-3;
 
     opacity: 0;
     transform: translateX(10%);
     transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 
     &:nth-child(2) {
       transition-delay: 0.1s;
@@ -238,6 +248,28 @@
     }
   }
 
+  a {
+    @apply text-white block text-2xl border-none font-bold leading-none;
+
+    &:hover {
+      color: #333;
+      padding-right: 5px;
+    }
+  }
+
+  .sub-menu {
+    margin-top: 15px;
+
+    li {
+      border-bottom: none;
+      padding: 5px 12px;
+    }
+
+    a {
+      font-size: 0.9em;
+    }
+  }
+
   &.open {
     @apply opacity-100;
 
@@ -249,35 +281,17 @@
       opacity: 1;
     }
   }
-
-  a {
-    @apply text-white block text-2xl border-none font-bold leading-none;
-
-    &:hover {
-      color: #333;
-      padding-right: 5px;
-    }
-  }
 }
-
-// .home .banner{
-//   .menu-item {
-//     > a {
-//       color: $primary;
-//
-//       transition: all 0.4s;
-//
-//       &:hover {
-//         color: darken($primary, 10%);
-//       }
-//     }
-//   }
-// }
 
 @screen lg {
   .banner {
     .nav-primary {
       @apply block;
+    }
+
+    .brand {
+      width: 160px;
+      margin: 10px 0;
     }
 
     .btn {
