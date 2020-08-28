@@ -10,7 +10,7 @@
           @endif
         </nav>
       </div>
-      <div class='pt-5 w-1/5 hidden lg:flex row justify-end'>
+      <div class='pt-5 hidden lg:flex row justify-end'>
         <a href="/donate" class='btn btn-secondary'>Donate</a>
         <button id='searchToggle' class="desktop-search-toggle lg:ml-2 p-3" data-search-toggle="closed" aria-label="Search Button">
             <svg class="svg-icon mx-auto block search-icon" aria-hidden="true" role="img" focusable="false" width="23" height="23" viewBox="0 0 23 23">
@@ -20,6 +20,9 @@
               <path d="M45.5 0L24 21.5L2.5 0L0 2.5L21.5 24L0 45.5L2.5 48L24 26.5L45.5 48L48 45.5L26.5 24L48 2.5L45.5 0Z"/>
             </svg>
           </button>
+        <ul class='nav lang-nav'>
+            {!! $page_languages !!}
+        </ul>
       </div>
       <button id='menuToggle' class='lg:hidden menu-toggle' type='button'>
         <span class='bar top'></span>

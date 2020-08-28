@@ -12,7 +12,6 @@
          @else
          <time class='py-1 text-sm font-bold mb-5 opacity-50'><i class='fa fa-clock'></i> {!! $event_start !!} - {!! $event_end !!}</time>
          @endif
-         {!! $event_cat !!}
        </div>
        <p class='block'>{!! $excerpt !!}</p>
     </div>
