@@ -1,0 +1,55 @@
+#jssor_1 {
+  height: 300px;
+  position: relative;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  width: 1200px;
+  overflow: hidden;
+  visibility: hidden;
+
+  > div {
+    vertical-align: middle;
+  }
+
+  .slides {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 1200px;
+    height: 300px;
+    overflow: hidden;
+
+    &::before {
+      content: " ";
+      width: 3%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 20;
+      background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &::after {
+      content: " ";
+      width: 3%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 20;
+      background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+  }
+
+  img {
+    height: auto !important;
+    width: auto !important;
+    max-width: 100% !important;
+    padding: 5px 30px;
+    top: 50% !important;
+    transform: translateY(-50%);
+    max-height: 200px;
+  }
+}

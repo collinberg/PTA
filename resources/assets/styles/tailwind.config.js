@@ -58,7 +58,7 @@ module.exports = {
     },
     fontFamily: {
       'sans': [
-        'benton-sans',
+        'Open Sans',
         '-apple-system',
         'Segoe UI',
         'Roboto',

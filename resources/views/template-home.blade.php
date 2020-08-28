@@ -26,6 +26,14 @@
 
       @include('section.events')
 
+    @elseif($block->block_type == 'One Column')
+
+      @include('partials.layout.aboutOneColumn')
+
+    @elseif($block->block_type == 'Two Columns')
+
+      @include('partials.layout.aboutTwoColumn')
+
     @endif
 
   @endforeach

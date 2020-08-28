@@ -17,6 +17,8 @@ $home_flex
     ->addLayout(get_field_partial('views/newsSection'))
     ->addLayout(get_field_partial('views/landing'))
     ->addLayout(get_field_partial('views/events'))
+    ->addLayout(get_field_partial('views/columnOne'))
+    ->addLayout(get_field_partial('views/columnTwo'))
     ->addLayout(get_field_partial('views/logo'));
 
 return $home_flex;
