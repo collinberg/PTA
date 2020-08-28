@@ -11,6 +11,10 @@ class App extends Controller
         return get_bloginfo('name');
     }
 
+    public function footerNewsletter(){
+      return get_field('newsletter_signup_code','options');
+    }
+
     public function siteLogo()
     {
         $logoURL = get_field('logo','options');
@@ -44,6 +48,10 @@ class App extends Controller
         if (is_404()) {
             return __('Not Found', 'sage');
         }
+
+        if (is_singular('tribe_events')) {
+            return 'Events';
+        }
         return get_the_title();
     }
 
@@ -55,5 +63,16 @@ class App extends Controller
          'youtube'   =>   get_field('youtube','options'),
          'instagram' =>   get_field('instagram','options')
       );
+    }
+
+    public function pageLanguages()
+    {
+      $languages = icl_get_languages('skip_missing=1');
+      if(1 < count($languages)){
+        foreach($languages as $l){
+          if(!$l['active']) $langs[] = '<li class="men-item"><a href="'.$l['url'].'"><i class="fas fa-globe"></i> English/Español</a></li>';
+        }
+        return join(', ', $langs);
+      }
     }
 }
