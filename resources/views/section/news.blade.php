@@ -2,10 +2,10 @@
 @if( !empty($block->background_color))
   <section class='{{ $block->section_classes }}'
             style="background-color: {{  $block->background_color  }}"
-            id='section-{{$block->index}}'>
+            id='section-{{$block->index}}' aria-label="Section about Latest News">
 @else
   <section class='{{ $block->section_classes }}'
-           id='section-{{$block->index}}'>
+           id='section-{{$block->index}}' aria-label="Section about Latest News">
 @endif
   <div class='container'>
 		<h2 class='text-center font-bold text-4xl'>{{$block->header }}</h2>

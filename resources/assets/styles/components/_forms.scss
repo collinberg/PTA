@@ -34,6 +34,19 @@
   font-weight: bold;
 }
 
+.nf-field-element {
+  input[type="button"] {
+    font-weight: bold;
+    font-family: "Oswald", sans-serif;
+
+    &:hover {
+      cursor: pointer;
+      color: white !important;
+      background: $secondary !important;
+    }
+  }
+}
+
 input[type="submit"] {
   display: block;
   padding: 10px 25px;

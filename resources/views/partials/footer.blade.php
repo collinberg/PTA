@@ -1,10 +1,10 @@
-<section class="bg-primary py-5 lg:py-20 text-white">
+<section class="bg-primary py-5 lg:py-20 text-white" id="Newsletter" aria-label="Newsletter Signup">
   <div class='container'>
     <h2 class='font-bold text-center lg:text-4xl m-0 p-0'>Sign up for our Newsletter</h2>
     @php echo do_shortcode($footer_newsletter) @endphp
   </div>
 </section>
-<footer class="content-info bg-grey-darker pt-5 lg:pt-20 text-white">
+<footer class="content-info bg-grey-darker pt-5 lg:pt-20 text-white" aria-label="Website Footer">
   <div class="container lg:pb-24">
     <div class='flex flex-wrap justify-between'>
       <div class='w-full lg:w-1/2'>

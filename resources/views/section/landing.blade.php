@@ -1,14 +1,14 @@
 @if( !empty($block->background_color))
   <section class='{{ $block->section_classes }} '
             style="background-color: {{  $block->background_color  }}"
-            id='section-{{$block->index}}'>
+            id='section-{{$block->index}}' aria-label="Marketing & Introduction Section">
 @elseif( !empty($block->all_fields['background_image']))
   <section class='{{ $block->section_classes }}'
            style="background-image: url({{  $block->all_fields['background_image']['url'] }}); background-size: {{  $block->all_fields['background_image_size']}}; background-position: center center;"
-           id='section-{{$block->index}}'>
+           id='section-{{$block->index}}' aria-label="Marketing & Introduction Section">
 @else
   <section class='{{ $block->section_classes }}'
-           id='section-{{$block->index}}'>
+           id='section-{{$block->index}}' aria-label="Marketing & Introduction Section">
 @endif
 	<div class='w-11/12 sm:w-2/3 lg:w-2/5 text-center mx-auto'>
 		<h1 class='text-white text-3xl lg:text-6xl font-bold'>{{ $block->header }}</h1>

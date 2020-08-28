@@ -14,9 +14,9 @@
         @include('partials.footer')
       </div>
     </div>
-    <section id="mega-nav" class="p-12 animate__animated animate__fast">
+    <section id="mega-nav" class="py-12 animate__animated animate__fast" aria-label="Mobile Menu Navigation">
       @if (has_nav_menu('primary_navigation'))
-        {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav text-right mt-12 lg:mt-16']) !!}
+        {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav text-left mt-12 lg:mt-16']) !!}
       @endif
     </section>
     @php wp_footer() @endphp
