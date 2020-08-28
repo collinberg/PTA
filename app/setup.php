@@ -12,6 +12,9 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
+  if( is_front_page() ) {
+    wp_enqueue_script('sage/slidder.js', asset_path('scripts/jssor.js'), ['jquery'], '1.0.0', true);
+  }
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
     //wp_enqueue_style('AdobeFonts','https://use.typekit.net/pjh5tdq.css', false, null);
@@ -19,6 +22,10 @@ add_action('wp_enqueue_scripts', function () {
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
+
+    wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&family=Oswald:wght@400;700&display=swap', false,null);
+
+
 }, 100);
 
 /**
@@ -344,13 +351,13 @@ function remove_protected_text() {
 }
 add_filter( 'protected_title_format',  __NAMESPACE__ .'\\remove_protected_text' );
 
-add_filter('init', function () {
-    if (is_admin()) {
-        return;
-    }
-    wp_deregister_script( 'jquery-core' );
-    wp_register_script( 'jquery-core', "https://code.jquery.com/jquery-3.5.1.min.js", array(), '3.1.1' );
-});
+// add_filter('init', function () {
+//     if (is_admin()) {
+//         return;
+//     }
+//     wp_deregister_script( 'jquery-core' );
+//     wp_register_script( 'jquery-core', "https://code.jquery.com/jquery-3.5.1.min.js", array(), '3.1.1' );
+// });
 // -------------------------------------------------------------
 // Front Page Scripts Cleanup
 // -------------------------------------------------------------
@@ -360,8 +367,8 @@ function script_cleanup() {
     //Enter Scripts Here.
 
     //Events Calendar
-    //wp_dequeue_script('tribe-common');
-    //wp_dequeue_script('tribe-tooltip-js');
+    wp_dequeue_script('tribe-common');
+    wp_dequeue_script('tribe-tooltip-js');
 
     //Contact Form 7 (not needed if no form is on the homepage)
     //wp_dequeue_script('contact-form-7');
@@ -381,11 +388,13 @@ function style_cleanup() {
 
 
     //Events
-    //wp_dequeue_style('tribe-tooltip');
-    //wp_dequeue_style('tribe-events-admin-menu');
+    wp_dequeue_style('tribe-tooltip');
+    wp_dequeue_style('tribe-events-admin-menu');
 
     //Simple Lightbox
     //wp_dequeue_style('slb_core');
+    wp_dequeue_style('pta-sus-style');
+    wp_dequeue_style('pta-sus-style');
 
   }
   //This is how you dequeue scripts on a speciic Page

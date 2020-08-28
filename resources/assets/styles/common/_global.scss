@@ -4,7 +4,9 @@ h3,
 h4,
 h5,
 h6 {
-  @apply mb-2 leading-tight;
+  @apply mb-2 leading-tight font-bold;
+
+  font-family: "Oswald", sans-serif;
 }
 
 p {
