@@ -117,6 +117,26 @@ $website = tribe_get_event_website_link();
 
 		<?php endif ?>
 
+
+	<?php
+	// Include venue meta if appropriate.
+	if ( tribe_get_venue_id() ) {
+		// If we have no map to embed and no need to keep the venue separate...
+		if ( ! $set_venue_apart && ! tribe_embed_google_map() ) {
+			tribe_get_template_part( 'modules/meta/venue' );
+		} elseif ( ! $set_venue_apart && ! tribe_has_organizer() && tribe_embed_google_map() ) {
+			// If we have no organizer, no need to separate the venue but we have a map to embed...
+			tribe_get_template_part( 'modules/meta/venue' );
+			echo '<div class="tribe-events-meta-group tribe-events-meta-group-gmap">';
+			tribe_get_template_part( 'modules/meta/map' );
+			echo '</div>';
+		} else {
+			// If the venue meta has not already been displayed then it will be printed separately by default
+			$set_venue_apart = true;
+		}
+	} ?>
+
+
 		<?php
 		// Event Cost
 		if ( ! empty( $cost ) ) : ?>

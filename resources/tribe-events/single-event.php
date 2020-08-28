@@ -33,6 +33,8 @@ $event_id = get_the_ID(); ?>
 
       do_action( 'tribe_events_single_event_before_the_meta' );
 
+			the_post_thumbnail();
+
       tribe_get_template_part( 'modules/meta' );
 
       do_action( 'tribe_events_single_event_after_the_meta' );
