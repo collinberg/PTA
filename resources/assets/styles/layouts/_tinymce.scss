@@ -1,5 +1,6 @@
 body#tinymce {
   margin: 12px !important;
+  font-size: 16px;
   font-family: "Open Sans", Roboto, sans-serif;
 
   h1,
@@ -12,5 +13,10 @@ body#tinymce {
   ul {
     padding-left: 10px;
     list-style: disc;
+
+    li {
+      padding-bottom: 10px;
+      line-height: 1.5em;
+    }
   }
 }

@@ -55,12 +55,12 @@
   }
 }
 
-#section-0 {
+.home #section-0 {
   min-height: 500px;
 }
 
 @screen lg {
-  #section-0 {
+  .home #section-0 {
     min-height: 100vh;
   }
 

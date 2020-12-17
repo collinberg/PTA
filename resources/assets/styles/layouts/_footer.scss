@@ -1,9 +1,15 @@
 .content-info {
   a {
     @apply text-white leading-normal border-none;
+  }
+
+  .btn {
+    margin-top: 0;
+    font-weight: bold;
 
     &:hover {
-      @apply border-none text-black;
+      color: white !important;
+      filter: brightness(0.8);
     }
   }
 
@@ -16,6 +22,19 @@
       font-size: 26px;
       padding: 0 10px;
       border: none;
+    }
+  }
+
+  .menu {
+    a {
+      display: block;
+      width: 100%;
+      margin-bottom: 3px;
+
+      &:hover {
+        color: #333;
+        transform: translateX(3px);
+      }
     }
   }
 }
