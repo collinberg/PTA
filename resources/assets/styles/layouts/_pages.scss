@@ -48,6 +48,33 @@
       line-height: 1.75;
     }
   }
+
+  table {
+    width: 100%;
+    border-top: 1px solid #dee2e6;
+
+    td,
+    th {
+      padding: 10px;
+      line-height: 1.2em;
+    }
+
+    th {
+      border-bottom: 2px solid #dee2e6;
+      text-align: left;
+      background: #cfd5db;
+    }
+
+    td {
+      border-bottom: 1px solid #dee2e6;
+    }
+  }
+
+  p a[href*="@"] {
+    font-weight: bold;
+    border-bottom: 3px solid #dee2e6;
+    transition: all 0.4s;
+  }
 }
 
 .h-custom {

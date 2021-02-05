@@ -11,7 +11,7 @@ $themeOption_Logo
       ->setGroupConfig('position', 'side');
 
 $themeOption_Logo
-  ->AddImage('logo',['return_format' => 'url'])
+  ->AddImage('logo',['return_format' => 'id'])
   ->addColorPicker('brand_color',['label' => 'Brand Color']);
 
 return $themeOption_Logo;

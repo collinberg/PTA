@@ -17,8 +17,11 @@ class App extends Controller
 
     public function siteLogo()
     {
-        $logoURL = get_field('logo','options');
-        return $logoURL;
+        $logoID = get_field('logo','options');
+        $logoURL = wp_get_attachment_image_url($logoID, 'medium');
+
+        $image_srcset = wp_get_attachment_image_srcset( $logoID, '600px' );
+        return  $image_srcset;
     }
 
     public static function title()
