@@ -15,15 +15,11 @@ add_action('wp_enqueue_scripts', function () {
   if( is_front_page() ) {
     wp_enqueue_script('sage/slidder.js', asset_path('scripts/jssor.js'), ['jquery'], '1.0.0', true);
   }
-    wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
-    //wp_enqueue_style('AdobeFonts','https://use.typekit.net/pjh5tdq.css', false, null);
 
-    if (is_single() && comments_open() && get_option('thread_comments')) {
-        wp_enqueue_script('comment-reply');
-    }
+  wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
+  wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
 
-    wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&family=Oswald:wght@400;700&display=swap', false,null);
+  wp_enqueue_style( 'OpenSans', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,800;1,400&family=Oswald:wght@400;700&display=swap', false,null);
 
 
 }, 100);
@@ -87,7 +83,7 @@ add_action('after_setup_theme', function () {
  */
 add_action('widgets_init', function () {
     $config = [
-        'before_widget' => '<section class="widget %1$s %2$s pb-10">',
+        'before_widget' => '<section class="widget %1$s %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h3 class="font-bold">',
         'after_title'   => '</h3>'
@@ -372,6 +368,8 @@ function script_cleanup() {
 
     //Contact Form 7 (not needed if no form is on the homepage)
     //wp_dequeue_script('contact-form-7');
+    wp_dequeue_script('wp-embed');
+
 
   }
 
@@ -396,11 +394,20 @@ function style_cleanup() {
     wp_dequeue_style('pta-sus-style');
     wp_dequeue_style('pta-sus-style');
 
+    wp_dequeue_style('wpml-legacy-dropdown-click-0');
+    
+/*
+    if ( ! is_user_logged_in() ) {
+        wp_deregister_style( 'dashicons' );
+    }
+*/
+    
+    wp_dequeue_style('wp-block-library');
+    wp_dequeue_style('pta_volunteer_sus_block-style-css');
+    wp_dequeue_style('pta_directory-style');
+    
   }
-  //This is how you dequeue scripts on a speciic Page
-  // if(basename(get_page_template()) == "template-form.blade.php") {
-  //
-  // }
+
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ .'\\style_cleanup',100);
 
