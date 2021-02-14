@@ -12,9 +12,9 @@
 @endif
   <div class='container'>
     <div class='entry-content lg:w-4/5 mx-auto'>
-      @if( !empty($block->header) )<h2>{{ $block->header }}</h2>@endif
       <div class='flex flex-wrap'>
         <div class='w-full {!! $block->left_width !!}'>
+          @if( !empty($block->header) )<h2>{{ $block->header }}</h2>@endif
           {!! $block->content !!}
         </div>
         <div class='w-full {!! $block->right_width !!}'>

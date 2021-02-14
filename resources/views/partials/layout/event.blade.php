@@ -3,8 +3,12 @@
      <span class='date pt-5 text-5xl uppercase font-bold block leading-none'>{!! $event_day !!}</span>
      <span class='date pb-5 text-3xl uppercase font-bold block leading-tight'>{!! $event_month !!}</span>
    </div>
-   <div class="p-5 flex w-full flex-wrap">
+   <div class="p-5 flex w-full flex-wrap lg:flex-no-wrap">
+     @if( !empty($image) )
      <div class='lg:w-3/4'>
+    @else
+      <div class=''>
+    @endif
        <span class='font-bold text-2xl block leading-tight underline-none hover:text-primary'><a href="{!! $link !!}" class='border-none'>{!! $title !!}</a></span>
        <div class='block mt-1 mb-3 '>
        @if( $all_day )
@@ -15,8 +19,10 @@
        </div>
        <p class='block'>{!! $excerpt !!}</p>
     </div>
+    @if( !empty($image) )
     <div class='lg:w-1/4 hidden lg:block'>
       {!! $image !!}
     </div>
+  @endif
  </div>
 </li>
