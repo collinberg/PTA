@@ -34,10 +34,15 @@
   font-weight: bold;
 }
 
+.nf-form-fields-required {
+  @apply text-center py-2 mt-3;
+}
+
 .nf-field-element {
   input[type="button"] {
     font-weight: bold;
     font-family: "Oswald", sans-serif;
+    width: 100% !important;
 
     &:hover {
       cursor: pointer;
