@@ -1,7 +1,12 @@
+<?php
+  $thumb = get_the_post_thumbnail_url() ?: \App\asset_path('images/placeholder.jpg')
+  
+?>
+
 <article @php post_class('article-post flex flex-col mb-5 lg:mb-10 items-stretch') @endphp>
   <div class='w-full mb-2'>
     <a href="{{ get_permalink() }}" class='border-none'>
-      <img src="{{ \App\asset_path('images/placeholder.jpg') }}" alt="{!! get_the_title() !!}" class='rounded-sm'>
+      <img src="<?php echo $thumb; ?>" alt="{!! get_the_title() !!}" class='rounded-sm'>
     </a>
   </div>
   <div class='w-full'>
