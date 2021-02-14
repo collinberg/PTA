@@ -2,11 +2,16 @@
 
 @section('content')
   @include('partials.page-header')
-
-  @if (!have_posts())
-    <div class="alert alert-warning">
-      {{ __('Sorry, but the page you were trying to view does not exist.', 'sage') }}
-    </div>
-    {!! get_search_form(false) !!}
-  @endif
+<section class="py-16">
+  <div class='container'>
+    @if (!have_posts())
+      <div>
+        <div class="alert alert-warning">
+          {{ __('Sorry, but the page you were trying to view does not exist.', 'sage') }}
+        </div>
+        {!! get_search_form(false) !!}
+      </div>
+    @endif
+  </div>
+</section>
 @endsection

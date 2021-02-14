@@ -1,5 +1,5 @@
 {{--
-  Template Name: About Template
+  Template Name: Section Generator
 --}}
 
 @extends('layouts.app')
