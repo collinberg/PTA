@@ -67,12 +67,14 @@ class App extends Controller
 
     public function pageLanguages()
     {
-      $languages = icl_get_languages('skip_missing=1');
-      if(1 < count($languages)){
-        foreach($languages as $l){
-          if(!$l['active']) $langs[] = '<li class="men-item"><a href="'.$l['url'].'"><i class="fas fa-globe"></i> English/Español</a></li>';
+      if( function_exists('icl_get_languages')) {
+        $languages = icl_get_languages('skip_missing=1');
+        if(1 < count($languages)){
+          foreach($languages as $l){
+            if(!$l['active']) $langs[] = '<li class="men-item"><a href="'.$l['url'].'"><i class="fas fa-globe"></i> English/Español</a></li>';
+          }
+          return join(', ', $langs);
         }
-        return join(', ', $langs);
       }
     }
 }
