@@ -1,3 +1,40 @@
+.carousel-container {
+  position: relative;
+  top: 0;
+  left: 0%;
+  margin: 0;
+  width: 100%;
+  bottom: 0;
+
+  .carouselImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    animation-name: fade;
+    animation-iteration-count: infinite;
+    animation-duration: 24s;
+  }
+}
+
+@keyframes fade {
+  0% { opacity: 0; }
+  24% { opacity: 0; }
+  30% { opacity: 1; }
+  60% { opacity: 1; }
+  66% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+#f-0 {
+  animation-delay: -8s;
+}
+
+#f-2 {
+  animation-delay: -16s;
+}
+
 #jssor_1 {
   height: 300px;
   position: relative;

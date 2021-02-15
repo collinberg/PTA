@@ -214,4 +214,20 @@ class FrontPage extends Controller
      }
    }
 
+
+   public function carouselImages()
+   {
+    $carousel = get_field('carousel');
+
+    if($carousel):
+      //Maybe do something with a limit here
+      return array_map(function ($item) {
+         return [
+             'url' => $item['background_image']['url'],
+         ];
+      }, $carousel ?? [] );
+    else:
+       return false;
+    endif;
+  }
 }
