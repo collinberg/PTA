@@ -1,0 +1,29 @@
+.acf-field-section-generator-home-sections {
+
+}
+
+.acf-field-section-generator-home-sections > div:first-child {
+  display: none;
+}
+
+.acf-field-section-generator-home-sections .acf-fc-layout-handle {
+  background: #23282d;
+  color: #eee !important;
+}
+
+.acf-field-section-generator-home-sections .acf-icon.-clear {
+  color: white !important;
+}
+
+.acf-field-section-generator-home-sections .layout .acf-fields div:first-child {
+  padding: 0;
+}
+
+.acf-field-section-generator-home-sections .layout .acf-fields .acf-fields.-top.-border.-sidebar {
+  border: 0px !important;
+}
+
+.acf-field-section-generator-home-sections .layout .acf-field-group > div:first-child {
+  background: green;
+  display: none;
+}

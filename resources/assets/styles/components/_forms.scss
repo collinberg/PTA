@@ -8,7 +8,7 @@
 }
 
 .search-form .search-field {
-  @apply block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-grey-darker border border-grey;
+  @apply block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-grey-dark border border-grey;
 }
 
 .search-form .search-submit {
@@ -35,13 +35,21 @@
 }
 
 .nf-form-fields-required {
-  @apply text-center py-2 mt-3;
+  display: none;
 }
 
 .nf-field-element {
+  input,
+  select {
+    min-height: 48px;
+    padding: 10px;
+    color: #333;
+  }
+
   input[type="button"] {
     font-weight: bold;
     font-family: "Oswald", sans-serif;
+    transition: all 0.4s ease;
     width: 100% !important;
 
     &:hover {

@@ -19,7 +19,7 @@ add_action('wp_enqueue_scripts', function () {
   wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
   wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
 
-  wp_enqueue_style( 'OpenSans', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,800;1,400&family=Oswald:wght@400;700&display=swap', false,null);
+  wp_enqueue_style( 'OpenSans', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,800;1,400&family=Oswald:wght@700&display=swap', false,null);
 
 
 }, 100);
@@ -395,17 +395,17 @@ function style_cleanup() {
     wp_dequeue_style('pta-sus-style');
 
     wp_dequeue_style('wpml-legacy-dropdown-click-0');
-    
+
 /*
     if ( ! is_user_logged_in() ) {
         wp_deregister_style( 'dashicons' );
     }
 */
-    
+
     wp_dequeue_style('wp-block-library');
     wp_dequeue_style('pta_volunteer_sus_block-style-css');
     wp_dequeue_style('pta_directory-style');
-    
+
   }
 
 }
@@ -553,4 +553,11 @@ function gutenberg_sections_register_acf_color_palette() {
     </script>
     <?php
 
+}
+// -------------------------------------------------------------
+// Admin Styles (Clean up Flex Generators)
+// -------------------------------------------------------------
+add_action( 'admin_enqueue_scripts',  __NAMESPACE__ .'\\add_admin_styles' );
+function add_admin_styles() {
+  wp_enqueue_style('admin-styles', get_template_directory_uri().'/admin-styles.css');
 }
