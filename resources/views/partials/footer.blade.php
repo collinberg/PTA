@@ -4,7 +4,7 @@
     @php echo do_shortcode($footer_newsletter) @endphp
   </div>
 </section>
-<footer class="content-info bg-grey-darker pt-5 text-white" aria-label="Website Footer">
+<footer class="content-info bg-grey-darkest pt-5 text-white" aria-label="Website Footer">
   <div class="container lg:py-16">
     <div class='flex flex-wrap justify-between'>
       <div class='w-full lg:w-1/3'>
