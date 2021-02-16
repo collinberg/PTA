@@ -15,8 +15,8 @@
       <div style="background: url({!! $image['url'] !!}); background-size: cover; background-position: 50% 50%;"  class='w-full carouselImg' id='f-{!! $loop->index !!}'></div>
     @endforeach
   </div>
-	<div class='w-11/12 sm:w-2/3 lg:w-2/5 text-center mx-auto relative'>
-		<h1 class='text-white text-3xl lg:text-6xl font-bold'>{{ $block->header }}</h1>
+	<div class='carousel-content sm:w-2/3 lg:w-2/5 text-center mx-auto relative px-2'>
+		<h1 class='text-white text-5xl lg:text-6xl font-bold'>{{ $block->header }}</h1>
 		<p class='text-white mx-auto font-bold mb-5'>{{ $block->all_fields['tagline'] }}</p>
 		<a href="{{ $block->all_fields['button_link'] }}" class='btn text-white my-4 px-12 inline-block'>{{ $block->all_fields['button_Text'] }}</a>
 	</div>
